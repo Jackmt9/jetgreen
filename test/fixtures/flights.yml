@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  passenger: one
+  plane: one
+  status: MyString
+  depart: 2020-04-10
+  arrive: 2020-04-10
+  departure_time: 2020-04-10 16:57:00
+
+two:
+  passenger: two
+  plane: two
+  status: MyString
+  depart: 2020-04-10
+  arrive: 2020-04-10
+  departure_time: 2020-04-10 16:57:00

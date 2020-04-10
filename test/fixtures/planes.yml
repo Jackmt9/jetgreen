@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  seat_count: 1
+  wifi?: false
+
+two:
+  type: 
+  seat_count: 1
+  wifi?: false
