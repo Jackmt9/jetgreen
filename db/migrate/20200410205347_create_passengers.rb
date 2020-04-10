@@ -6,6 +6,8 @@ class CreatePassengers < ActiveRecord::Migration[6.0]
       t.date :dob
       t.string :gender
       t.string :phone
+      t.string :middle_name
+      t.string :suffix
 
       t.timestamps
     end

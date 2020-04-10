@@ -27,10 +27,10 @@ ActiveRecord::Schema.define(version: 2020_04_10_205826) do
   create_table "flights", force: :cascade do |t|
     t.bigint "passenger_id", null: false
     t.bigint "plane_id", null: false
-    t.string "status"
+    t.string "status", default: "ON TIME"
     t.date "depart"
     t.date "arrive"
-    t.time "departure_time"
+    t.datetime "departure"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["passenger_id"], name: "index_flights_on_passenger_id"
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2020_04_10_205826) do
   end
 
   create_table "meal_types", force: :cascade do |t|
-    t.string "type"
+    t.string "meal"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 2020_04_10_205826) do
   create_table "movies", force: :cascade do |t|
     t.string "title"
     t.date "date"
-    t.string "description"
+    t.string "genre"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -74,12 +74,14 @@ ActiveRecord::Schema.define(version: 2020_04_10_205826) do
     t.date "dob"
     t.string "gender"
     t.string "phone"
+    t.string "middle_name"
+    t.string "suffix"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "planes", force: :cascade do |t|
-    t.string "type"
+    t.string "model"
     t.integer "seat_count"
     t.boolean "wifi?"
     t.datetime "created_at", precision: 6, null: false
