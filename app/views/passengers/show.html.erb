@@ -1,0 +1,11 @@
+<h1><%= @passenger.header_name %></h1>
+DOB: <%= @passenger.dob %><br/>
+Phone: <%= @passenger.phone %><br/>
+Flights:
+<ul>
+<% @passenger.flights.each do |f| %>
+<li><%= link_to f.display_string, flight_path(f) %></li>
+<% end %>
+</ul>
+<%= link_to "Update Passenger", edit_passenger_path %><br/>
+<%= link_to "Back to Flight Manifest", manifest_path(session[:flight_id]) %>

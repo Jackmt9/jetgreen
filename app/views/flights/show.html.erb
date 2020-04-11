@@ -1,0 +1,12 @@
+<%= render 'info' %>
+<br/>
+<%= @flight.plane.model %><br/><br/>
+Booked Seats: <%= link_to @flight.passengers.length, manifest_path(@flight) %><br/>
+Maximum Capacity: <%= @flight.plane.seat_count %><br/>
+Remaining Seats: <%= @flight.remaining_seats %><br/>
+Wifi: <%= @flight.wifi %><br/>
+
+<br/>
+<%= link_to "View In-Flight Movies" %><br/>
+<%= link_to "View In-Flight Food" %><br/>
+<%= button_to "Cancel Flight", method: :delete %>

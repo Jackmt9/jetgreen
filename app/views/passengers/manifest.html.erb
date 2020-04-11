@@ -1,0 +1,9 @@
+<%= render 'flights/info' %>
+<%= link_to "Back to Flight Info", flight_path(@flight) %>
+<br/>
+<h1>Manifest</h1>
+<ul>
+<% @passengers.each do |p| %>
+<li><%= link_to p.name, passenger_path(p) %></li>
+<% end %>
+</ul>

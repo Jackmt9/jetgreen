@@ -1,0 +1,6 @@
+<h1>JetGreen Airways</h1>
+
+Please select a flight:
+<% @flights.each do |flight| %>
+<br/><%= link_to flight.display_string, flight_path(flight) %>
+<% end %>

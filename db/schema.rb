@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_10_205826) do
+ActiveRecord::Schema.define(version: 2020_04_11_173152) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,15 +25,13 @@ ActiveRecord::Schema.define(version: 2020_04_10_205826) do
   end
 
   create_table "flights", force: :cascade do |t|
-    t.bigint "passenger_id", null: false
     t.bigint "plane_id", null: false
     t.string "status", default: "ON TIME"
-    t.date "depart"
-    t.date "arrive"
+    t.string "depart"
+    t.string "arrive"
     t.datetime "departure"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["passenger_id"], name: "index_flights_on_passenger_id"
     t.index ["plane_id"], name: "index_flights_on_plane_id"
   end
 
@@ -80,6 +78,15 @@ ActiveRecord::Schema.define(version: 2020_04_10_205826) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "pfs", force: :cascade do |t|
+    t.bigint "flight_id", null: false
+    t.bigint "passenger_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["flight_id"], name: "index_pfs_on_flight_id"
+    t.index ["passenger_id"], name: "index_pfs_on_passenger_id"
+  end
+
   create_table "planes", force: :cascade do |t|
     t.string "model"
     t.integer "seat_count"
@@ -90,9 +97,10 @@ ActiveRecord::Schema.define(version: 2020_04_10_205826) do
 
   add_foreign_key "ffs", "flights"
   add_foreign_key "ffs", "foods"
-  add_foreign_key "flights", "passengers"
   add_foreign_key "flights", "planes"
   add_foreign_key "foods", "meal_types"
   add_foreign_key "mfs", "flights"
   add_foreign_key "mfs", "movies"
+  add_foreign_key "pfs", "flights"
+  add_foreign_key "pfs", "passengers"
 end
