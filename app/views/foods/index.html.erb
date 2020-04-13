@@ -1,0 +1,9 @@
+<%= render 'flights/info' %>
+<h1>In-Flight Meals</h1>
+<ul>
+<h2><%= @foods.first.meal_type.meal %></h2>
+<% @foods.each do |f| %>
+<li><%= f.dish %></li>
+<% end %>
+</ul>
+<%= link_to "Back to Flight Info", flight_path(@flight) %>

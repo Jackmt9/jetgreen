@@ -1,5 +1,6 @@
 <%= render 'flights/info' %>
-<%= link_to "Back to Flight Info", flight_path(@flight) %>
+<%= link_to "Back to Flight Info", flight_path(@flight) %><br/>
+<%= link_to "Remove Passenger", remove_passenger_path(@flight) %>
 <br/>
 <h1>Manifest</h1>
 <ul>

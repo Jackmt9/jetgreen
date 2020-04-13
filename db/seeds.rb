@@ -48,19 +48,15 @@ Plane.create!(model: "Boeing 787", seat_count: 242, wifi?: true)
 
 n = 1
 30.times do
-    depart1 = Faker::Address.state
-    depart2 = Faker::Address.state
-    arrive1 = Faker::Address.state
-    arrive2 = Faker::Address.state
-    datetime1 = Faker::Time.between(from: DateTime.now, to: DateTime.now + 12000)
-    datetime2 = Faker::Time.between(from: DateTime.now, to: DateTime.now + 12000)
-    b1 = Flight.create!(plane_id: rand(3) + 1, depart: depart1, arrive: arrive1, departure: datetime1)
-    b2 = Flight.create!(plane_id: rand(3) + 1, status: "DELAYED", depart: depart2, arrive: arrive2, departure: datetime2)
+    depart = Faker::Address.state
+    arrive = Faker::Address.state
+    datetime = Faker::Time.between(from: DateTime.now, to: DateTime.now + 12000)
+    flight = Flight.create!(plane_id: rand(3) + 1, depart: depart, arrive: arrive, departure: datetime)
     30.times do
         a1 = Passenger.create!(last_name: Faker::Name.last_name, first_name: Faker::Name.male_first_name, middle_name: Faker::Name.male_first_name, dob: Faker::Date.birthday(min_age: 4, max_age: 90), suffix: Faker::Name.suffix, phone: Faker::PhoneNumber.cell_phone, gender: "M")
         a2 = Passenger.create!(last_name: Faker::Name.last_name, first_name: Faker::Name.female_first_name, middle_name: Faker::Name.female_first_name, dob: Faker::Date.birthday(min_age: 4, max_age: 90), suffix: Faker::Name.suffix, phone: Faker::PhoneNumber.cell_phone, gender: "F")
-        2.times {Pf.create!(passenger: a1, flight: b1)}
-        4.times {Pf.create!(passenger: a2, flight: b2)}
+        Pf.create!(passenger: a1, flight: flight)
+        Pf.create!(passenger: a2, flight: flight)
     end
     10.times {Ff.create!(food_id: rand(5) + 1, flight_id: n)}
     3.times {Mf.create!(movie_id: rand(50) + 1 , flight_id: n)}

@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
     def index
-        byebug
-        @movies = Movie.where
+        @flight = Flight.find(params[:flight_id])
+        @movies = @flight.sort_movies
     end
 end

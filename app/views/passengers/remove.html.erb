@@ -1,0 +1,5 @@
+<%= render 'flights/info' %>
+<h1>Remove a Passenger</h1>
+<%= form_tag(destroy_path, method: :delete) %>
+<%= collection_select(:pfs_id, :pf, @pfs, :id, :passenger_name ,{:prompt => 'SELECT A PASSENGER'}) %>
+<%= submit_tag 'Delete Passenger' %>

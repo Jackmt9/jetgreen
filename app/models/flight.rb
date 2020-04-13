@@ -23,4 +23,16 @@ class Flight < ApplicationRecord
     self.plane.wifi? ? "Yes" : "No"
   end
   
+  def sorted_passengers
+    self.passengers.sort_by{ |p| [p.last_name, p.first_name]}
+  end
+
+  def sort_movies
+    self.movies.sort_by(&:title)
+  end
+
+  def sorted_pfs
+    self.pfs.sort_by{|pf| [pf.passenger.last_name, pf.passenger.first_name]}
+  end
+
 end

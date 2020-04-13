@@ -2,7 +2,7 @@ class PassengersController < ApplicationController
 
     def manifest
         @flight = Flight.find(params[:flight_id])
-        @passengers = @flight.passengers
+        @passengers = @flight.sorted_passengers
         render 'manifest'
     end
 
@@ -18,6 +18,13 @@ class PassengersController < ApplicationController
         @passenger = Passenger.find(params[:pass_id])
         @passenger.update(pass_params)
         redirect_to passenger_path
+    end
+
+    def remove
+        @flight = Flight.find(params[:flight_id])
+        # @passengers = @flight.passengers
+        # @pfs = @flight.pfs
+        @pfs = @flight.sorted_pfs
     end
 
     private
