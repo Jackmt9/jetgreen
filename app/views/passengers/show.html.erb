@@ -3,12 +3,26 @@
 DOB: <%= @passenger.dob %><br/>
 Age: <%= @passenger.age %><br/>
 Phone: <%= @passenger.phone %><br/>
-Flights:
-<ul>
-    <% @passenger.flights.each do |f| %>
-        <li><%= link_to f.display_string, flight_path(f) %></li>
-    <% end %>
-</ul>
+<br/>
+Flights Passenger Booked:
+<br/>
+<table>
+    <tr>
+        <th>Flight ID</th>
+        <th>Path</th>
+        <th>Date</th>
+        <th>Time</th>
+    </tr>
 
+    <% @passenger.flights.sort_by(&:id).each do |f| %>
+    <tr>
+        <td><%= link_to f.id, flight_path(f) %></td>
+        <td><%= f.depart %> -> <%= f.arrive %></td>
+        <td><%= f.date %></td>
+        <td><%= f.time %></td>
+    </tr>
+    <% end %>
+</table>
+<br/>
 <%= link_to "Update Passenger", edit_passenger_path %><br/>
 <%= link_to "Back to Flight Manifest", manifest_path(session[:flight_id]) %>

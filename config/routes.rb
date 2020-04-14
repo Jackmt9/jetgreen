@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  
+
   # passenger routes
   get 'flights/:flight_id/manifest', to: 'passengers#manifest', as: 'manifest'
   get 'flights/:flight_id/manifest/remove_passenger', to: 'passengers#remove', as: 'remove_passenger'

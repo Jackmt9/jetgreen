@@ -11,8 +11,12 @@ class Flight < ApplicationRecord
   #   "Flight ##{self.id} | #{self.depart} -> #{self.arrive} | #{self.departure}"
   # end
 
+  def date
+    self.departure.to_date
+  end
+
   def time
-    "#{self.departure.hour}:#{self.departure.min}"
+    "#{self.departure.localtime.hour}:#{self.departure.min} EST"
   end
 
   def remaining_seats
@@ -27,7 +31,7 @@ class Flight < ApplicationRecord
     self.passengers.sort_by{ |p| [p.last_name, p.first_name]}
   end
 
-  def sort_movies
+  def sorted_movies
     self.movies.sort_by(&:title)
   end
 

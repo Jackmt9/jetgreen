@@ -1,4 +1,4 @@
-Flight #<%= @flight.id %><br/>
+<div> Flight #<%= @flight.id %><br/>
 <%= @flight.depart %> -> <%= @flight.arrive %><br/>
 <% if @flight.status == "ON TIME" %>
     <p style='color:green'>Status: <%= @flight.status %></p>
@@ -7,3 +7,4 @@ Flight #<%= @flight.id %><br/>
     <p>***Passengers Notified***</p>
 <% end %>
 Departs: <%= @flight.time %><br/>
+</div>

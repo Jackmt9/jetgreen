@@ -17,3 +17,12 @@
  body {
     background-color: lightblue;
   }
+
+div {
+    background-color: white;
+}
+
+td {
+  width: 500px;
+  text-align: center;
+}

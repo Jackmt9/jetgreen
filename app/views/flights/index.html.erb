@@ -4,14 +4,16 @@
     <tr>
         <th>Flight ID</th>
         <th>Path</th>
-        <th>Departs</th>
+        <th>Date</th>
+        <th>Time</th>
     </tr>
 
     <% @flights.sort_by(&:id).each do |f| %>
     <tr>
         <td><%= link_to f.id, flight_path(f) %></td>
         <td><%= f.depart %> -> <%= f.arrive %></td>
-        <td><%= f.departure %></td>
+        <td><%= f.date %></td>
+        <td><%= f.time %></td>
     </tr>
     <% end %>
 </table>
