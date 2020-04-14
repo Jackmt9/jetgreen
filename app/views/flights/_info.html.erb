@@ -1,8 +1,9 @@
 Flight #<%= @flight.id %><br/>
 <%= @flight.depart %> -> <%= @flight.arrive %><br/>
 <% if @flight.status == "ON TIME" %>
-<p style='color:green'>Status: <%= @flight.status %></p>
-<% else %>
-<p style='color:red'>Status: <%= @flight.status %></p>
+    <p style='color:green'>Status: <%= @flight.status %></p>
+<% elsif @flight.status == "CANCELED" %>
+    <p style='color:red'>Status: <%= @flight.status %></p>
+    <p>***Passengers Notified***</p>
 <% end %>
 Departs: <%= @flight.time %><br/>

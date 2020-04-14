@@ -22,7 +22,7 @@ class Flight < ApplicationRecord
   def wifi
     self.plane.wifi? ? "Yes" : "No"
   end
-  
+
   def sorted_passengers
     self.passengers.sort_by{ |p| [p.last_name, p.first_name]}
   end
@@ -34,5 +34,4 @@ class Flight < ApplicationRecord
   def sorted_pfs
     self.pfs.sort_by{|pf| [pf.passenger.last_name, pf.passenger.first_name]}
   end
-
 end

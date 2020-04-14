@@ -4,5 +4,4 @@ class FoodsController < ApplicationController
         @flight = Flight.find(params[:flight_id])
         @foods = @flight.foods
     end
-    
 end

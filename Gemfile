@@ -54,3 +54,10 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'faker'
+
+# Gems required for Twilio
+require 'rubygems'
+require 'twilio-ruby'
+
+# Gem Required for API security
+gem 'figaro'

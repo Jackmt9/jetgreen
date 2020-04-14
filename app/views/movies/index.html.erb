@@ -1,14 +1,17 @@
 <%= render 'flights/info' %>
+
 <h1>In-Flight Movies</h1>
+
 <ul>
     <% @movies.each do |m| %>
         <li>
             <%= m.title %>
             <ul>
-            <li>Genre: <%= m.genre %></li>
-            <li>Date: <%= m.date %></li>
+                <li>Genre: <%= m.genre %></li>
+                <li>Date: <%= m.date %></li>
             </ul>
         </li>
     <% end %>
 </ul>
+
 <%= link_to "Back To Flight", flight_path(@flight) %>

@@ -20,5 +20,4 @@ class Passenger < ApplicationRecord
         y_old -= 1 if Date.today < birthday + y_old.years #for days before birthday
         return y_old
     end
-        
 end

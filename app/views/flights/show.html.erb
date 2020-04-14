@@ -10,5 +10,4 @@ Wifi: <%= @flight.wifi %><br/>
 <%= link_to "View In-Flight Movies", movies_path(@flight) %><br/>
 <%= link_to "View In-Flight Food", foods_path(@flight) %><br/>
 <%= link_to "All Flights", flights_path %><br/>
-<%= link_to "Cancel Flight", cancel_flight_path %>
-<%# Use Twilio API to Update Passengers %>
+<%= (link_to "Cancel Flight", cancel_flight_path) unless @flight.status == "CANCELED" %>

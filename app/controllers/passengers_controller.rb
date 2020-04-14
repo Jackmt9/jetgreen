@@ -22,8 +22,6 @@ class PassengersController < ApplicationController
 
     def remove
         @flight = Flight.find(params[:flight_id])
-        # @passengers = @flight.passengers
-        # @pfs = @flight.pfs
         @pfs = @flight.sorted_pfs
     end
 
@@ -32,5 +30,4 @@ class PassengersController < ApplicationController
     def pass_params
         params.require(:passenger).permit(:first_name, :last_name, :dob, :gender, :phone, :middle_name, :suffix)
     end
-
 end
