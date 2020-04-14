@@ -7,9 +7,9 @@ class Flight < ApplicationRecord
   has_many :pfs
   has_many :passengers, through: :pfs
 
-  def display_string
-    "Flight ##{self.id} | #{self.depart} -> #{self.arrive} | #{self.departure}"
-  end
+  # def display_string
+  #   "Flight ##{self.id} | #{self.depart} -> #{self.arrive} | #{self.departure}"
+  # end
 
   def time
     "#{self.departure.hour}:#{self.departure.min}"

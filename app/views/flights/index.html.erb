@@ -1,6 +1,17 @@
 <h1>JetGreen Airways</h1>
-
 <p>Please select a flight:</p>
-<% @flights.sort_by(&:id).each do |flight| %>
-    <br/><%= link_to flight.display_string, flight_path(flight) %>
-<% end %>
+<table>
+    <tr>
+        <th>Flight ID</th>
+        <th>Path</th>
+        <th>Departs</th>
+    </tr>
+
+    <% @flights.sort_by(&:id).each do |f| %>
+    <tr>
+        <td><%= link_to f.id, flight_path(f) %></td>
+        <td><%= f.depart %> -> <%= f.arrive %></td>
+        <td><%= f.departure %></td>
+    </tr>
+    <% end %>
+</table>
