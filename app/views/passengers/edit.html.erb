@@ -1,23 +1,29 @@
+<% if @errors %>
+    <% @errors.each do |e| %>
+        <p style='color:red'><%= e %></p>
+    <% end %>
+<% end %>
+
 <%= form_for @passenger do |f| %>
-    <%= f.label :first_name %>
+    *<%= f.label :first_name %>
     <%= f.text_field :first_name %>
     <br/>
     <%= f.label :middle_name %>
     <%= f.text_field :middle_name %>
     <br/>
-    <%= f.label :last_name %>
+    *<%= f.label :last_name %>
     <%= f.text_field :last_name %>
     <br/>
     <%= f.label :suffix %>
     <%= f.text_field :suffix %>
     <br/>
-    <%= f.label :gender %>
-    <%= f.text_field :gender %>
+    *<%= f.label :gender %>
+    <%= f.select :gender, ['M', 'F', 'Other'] %>
     <br/>
-    <%= f.label :dob %>
+    *<%= f.label :dob %>
     <%= f.text_field :dob %>
     <br/>
-    <%= f.label :phone %>
+    *<%= f.label :phone %>
     <%= f.text_field :phone %>
     <br/>
     <%= f.submit %>
