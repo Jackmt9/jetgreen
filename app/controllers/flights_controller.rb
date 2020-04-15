@@ -6,7 +6,7 @@ class FlightsController < ApplicationController
 
     def show
         @flight = Flight.find(params[:flight_id])
-        session[:flight_id] = params[:flight_id]
+        cookies[:flight_id] = params[:flight_id]
     end
 
     def cancel

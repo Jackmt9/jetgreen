@@ -6,6 +6,9 @@
 #   movies = Movie.create!([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create!(name: 'Luke', movie: movies.first)
 
+Agent.create!(username: "jack", password: "password")
+
+
 b = MealType.create!(meal: "Breakfast")
 l = MealType.create!(meal: "Lunch")
 d = MealType.create!(meal: "Dinner")
@@ -74,6 +77,8 @@ n = 1
         }
     end
 
+    3.times {Mf.create!(movie_id: rand(50) + 1 , flight_id: n)}
+    
     n += 1
 end
 

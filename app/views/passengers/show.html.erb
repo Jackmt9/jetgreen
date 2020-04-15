@@ -25,4 +25,4 @@ Flights Passenger Booked:
 </table>
 <br/>
 <%= link_to "Update Passenger", edit_passenger_path %><br/>
-<%= link_to "Back to Flight Manifest", manifest_path(session[:flight_id]) %>
+<%= link_to "Back to Flight Manifest", manifest_path(cookies[:flight_id]) %>

@@ -23,4 +23,9 @@ Rails.application.routes.draw do
   # food routes
   get 'flights/:flight_id/foods', to: 'foods#index', as: 'foods'
 
+  # Gate Agent routes
+  get 'agent/login', to: 'agents#login_form', as: 'login_form'
+  post 'agent/login', to: 'agents#login'
+  get 'agent/logout', to: 'agents#logout'
+
 end

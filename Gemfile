@@ -61,3 +61,6 @@ require 'twilio-ruby'
 
 # Gem Required for API security
 gem 'figaro'
+
+# Required for password digest and authentication
+gem 'bcrypt'
