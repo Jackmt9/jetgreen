@@ -1,5 +1,7 @@
 class Flight < ApplicationRecord
+
   belongs_to :plane
+  
   has_many :mfs
   has_many :ffs
   has_many :movies, through: :mfs
@@ -7,16 +9,12 @@ class Flight < ApplicationRecord
   has_many :pfs
   has_many :passengers, through: :pfs
 
-  # def display_string
-  #   "Flight ##{self.id} | #{self.depart} -> #{self.arrive} | #{self.departure}"
-  # end
-
   def date
     self.departure.to_date
   end
 
   def time
-    "#{self.departure.localtime.hour}:#{self.departure.min} EST"
+    self.departure.strftime('%I:%M %p') + " " + self.departure.localtime.zone
   end
 
   def remaining_seats
