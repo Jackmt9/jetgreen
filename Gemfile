@@ -56,8 +56,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'faker'
 
 # Gems required for Twilio
+# Unhash to make twilio functional
 require 'rubygems'
-require 'twilio-ruby'
+# require 'twilio-ruby'
 
 # Gem Required for API security
 gem 'figaro'

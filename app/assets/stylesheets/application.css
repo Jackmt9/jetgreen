@@ -28,3 +28,9 @@ td {
   width: 200px;
   text-align: center;
 }
+ 
+h1.name{
+    font-family: 'Arima Madurai', cursive;
+    text-shadow: 0px 3px 1px rgba(8, 163, 54, 0.6);
+    font-size: 4rem;
+}
