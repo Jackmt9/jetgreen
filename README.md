@@ -2,6 +2,8 @@
 Jetgreen is an application to be used by airline gate-agents to manage and alter outbound flights.
 
 ### Table of Contents
+- [Demo](#demo)
+
 - [Features](#features)
 
 - [Getting Started](#getting-started)
@@ -9,6 +11,9 @@ Jetgreen is an application to be used by airline gate-agents to manage and alter
 - [Tools](#tools)
 
 - [Project Layout](#project-layout)
+
+### Demo
+Click [here](https://youtu.be/SIUZVVVib0g) to view a demo of this project.
 
 ### Features
 A user is able to:
