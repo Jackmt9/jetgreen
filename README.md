@@ -31,7 +31,7 @@ To launch the server:
 5. Migrate to set up your database schema by running ```$ rails db:migrate```.
 6. Initialize the seed data by running ```$ rails db:seed```
 7. Run ```$ rails server``` to start your server. 
-8. Open your browser and navigate to http://localhost:3000/ 
+8. Open your browser and navigate to http://localhost:3000/flights 
 9. The login information is located in the seed data (Username: jack, Password: password).
 
 ### Tools
